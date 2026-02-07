@@ -1,0 +1,461 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    min-height: 100vh;
+    color: #fff;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.page {
+    display: none;
+}
+
+.page.active {
+    display: block;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Header */
+.header {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.cisco-logo {
+    width: 150px;
+    margin-bottom: 20px;
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    background: linear-gradient(90deg, #00bceb, #6cc04a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.header h2 {
+    font-size: 1.3rem;
+    color: #a0a0a0;
+    font-weight: 400;
+}
+
+/* Info Box */
+.info-box, .instructions {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 25px;
+    margin: 20px 0;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.info-box h3, .instructions h3 {
+    color: #00bceb;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+.info-box ul, .instructions ul {
+    list-style: none;
+    padding-left: 10px;
+}
+
+.info-box li, .instructions li {
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.info-box li:last-child, .instructions li:last-child {
+    border-bottom: none;
+}
+
+/* Student Info */
+.student-info {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.student-info label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+.student-info input {
+    padding: 15px 25px;
+    font-size: 1.1rem;
+    border: 2px solid #00bceb;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.student-info input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.student-info input:focus {
+    outline: none;
+    border-color: #6cc04a;
+    box-shadow: 0 0 20px rgba(108, 192, 74, 0.3);
+}
+
+/* Buttons */
+.btn-primary, .btn-secondary, .btn-nav, .btn-submit {
+    padding: 15px 40px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+.btn-primary {
+    background: linear-gradient(90deg, #00bceb, #049fd9);
+    color: #fff;
+    display: block;
+    margin: 30px auto;
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(0, 188, 235, 0.4);
+}
+
+.btn-secondary {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    border: 2px solid #00bceb;
+}
+
+.btn-secondary:hover {
+    background: rgba(0, 188, 235, 0.2);
+}
+
+.btn-nav {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.btn-nav:hover:not(:disabled) {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.btn-nav:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.btn-submit {
+    background: linear-gradient(90deg, #6cc04a, #4a9c2d);
+    color: #fff;
+}
+
+.btn-submit:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(108, 192, 74, 0.4);
+}
+
+/* Exam Header */
+.exam-header {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.exam-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    font-size: 1rem;
+}
+
+.progress-bar {
+    height: 8px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress {
+    height: 100%;
+    background: linear-gradient(90deg, #00bceb, #6cc04a);
+    width: 0%;
+    transition: width 0.3s ease;
+}
+
+/* Question Container */
+.question-container {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 30px;
+    margin: 20px 0;
+    min-height: 400px;
+}
+
+.question-text {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.question-type {
+    display: inline-block;
+    background: #00bceb;
+    color: #fff;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    margin-bottom: 15px;
+}
+
+.options-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.option {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.option:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: #00bceb;
+}
+
+.option.selected {
+    background: rgba(0, 188, 235, 0.2);
+    border-color: #00bceb;
+}
+
+.option input {
+    margin-right: 15px;
+    width: 20px;
+    height: 20px;
+    accent-color: #00bceb;
+}
+
+.option label {
+    cursor: pointer;
+    flex: 1;
+    line-height: 1.5;
+}
+
+/* Navigation */
+.navigation-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.question-nav {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.question-nav h4 {
+    margin-bottom: 15px;
+    color: #a0a0a0;
+}
+
+.dots-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.dot {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dot:hover {
+    background: rgba(0, 188, 235, 0.3);
+    border-color: #00bceb;
+}
+
+.dot.current {
+    background: #00bceb;
+    border-color: #00bceb;
+}
+
+.dot.answered {
+    background: #6cc04a;
+    border-color: #6cc04a;
+}
+
+/* Results Page */
+.results-container {
+    text-align: center;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+
+.result-icon {
+    font-size: 5rem;
+    margin-bottom: 20px;
+}
+
+.score-display {
+    font-size: 3rem;
+    font-weight: 700;
+    margin: 20px 0;
+}
+
+.score-display.pass {
+    color: #6cc04a;
+}
+
+.score-display.fail {
+    color: #ff4757;
+}
+
+.score-details {
+    font-size: 1.2rem;
+    color: #a0a0a0;
+    margin-bottom: 30px;
+}
+
+.results-actions {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* Answers Review */
+.answers-review {
+    margin-top: 30px;
+}
+
+.answers-review h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #00bceb;
+}
+
+.review-item {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 15px;
+}
+
+.review-item.correct {
+    border-left: 4px solid #6cc04a;
+}
+
+.review-item.incorrect {
+    border-left: 4px solid #ff4757;
+}
+
+.review-question {
+    font-weight: 600;
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+.review-answer {
+    padding: 10px 15px;
+    border-radius: 8px;
+    margin: 5px 0;
+}
+
+.review-answer.user-answer {
+    background: rgba(255, 71, 87, 0.2);
+    border: 1px solid #ff4757;
+}
+
+.review-answer.correct-answer {
+    background: rgba(108, 192, 74, 0.2);
+    border: 1px solid #6cc04a;
+}
+
+.review-answer.user-correct {
+    background: rgba(108, 192, 74, 0.2);
+    border: 1px solid #6cc04a;
+}
+
+.explanation {
+    margin-top: 15px;
+    padding: 15px;
+    background: rgba(0, 188, 235, 0.1);
+    border-radius: 8px;
+    font-style: italic;
+    color: #a0a0a0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .question-text {
+        font-size: 1rem;
+    }
+    
+    .navigation-buttons {
+        flex-direction: column;
+    }
+    
+    .btn-nav, .btn-submit {
+        width: 100%;
+    }
+    
+    .results-actions {
+        flex-direction: column;
+    }
+    
+    .results-actions button {
+        width: 100%;
+    }
+}

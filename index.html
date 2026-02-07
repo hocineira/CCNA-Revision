@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulateur CCNA 1 - Examen Final ITNv7</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Page d'accueil -->
+        <div id="home-page" class="page active">
+            <div class="header">
+                <div class="logo">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Cisco_logo_blue_2016.svg/1200px-Cisco_logo_blue_2016.svg.png" alt="Cisco Logo" class="cisco-logo">
+                </div>
+                <h1>🎓 Simulateur d'Examen CCNA 1</h1>
+                <h2>Introduction to Networks (ITNv7)</h2>
+            </div>
+            
+            <div class="info-box">
+                <h3>📋 Informations sur l'examen</h3>
+                <ul>
+                    <li><strong>Nombre de questions :</strong> 60 questions</li>
+                    <li><strong>Score minimum requis :</strong> 70% (42/60)</li>
+                    <li><strong>Type de questions :</strong> Choix multiples (simple et multiple)</li>
+                    <li><strong>Temps :</strong> Illimité</li>
+                </ul>
+            </div>
+
+            <div class="instructions">
+                <h3>📝 Instructions</h3>
+                <ul>
+                    <li>Lisez attentivement chaque question avant de répondre</li>
+                    <li>Pour les questions à choix multiples, sélectionnez toutes les réponses correctes</li>
+                    <li>Vous pouvez naviguer entre les questions</li>
+                    <li>Une fois l'examen terminé, vous verrez votre score et les corrections</li>
+                </ul>
+            </div>
+
+            <div class="student-info">
+                <label for="student-name">Nom de l'étudiant :</label>
+                <input type="text" id="student-name" placeholder="Entrez votre nom">
+            </div>
+
+            <button id="start-exam" class="btn-primary">
+                🚀 Commencer l'examen
+            </button>
+        </div>
+
+        <!-- Page d'examen -->
+        <div id="exam-page" class="page">
+            <div class="exam-header">
+                <div class="exam-info">
+                    <span id="question-counter">Question 1/60</span>
+                    <span id="student-display"></span>
+                </div>
+                <div class="progress-bar">
+                    <div id="progress" class="progress"></div>
+                </div>
+            </div>
+
+            <div id="question-container" class="question-container">
+                <!-- Questions dynamiques ici -->
+            </div>
+
+            <div class="navigation-buttons">
+                <button id="prev-btn" class="btn-nav" disabled>⬅️ Précédent</button>
+                <button id="next-btn" class="btn-nav">Suivant ➡️</button>
+                <button id="submit-btn" class="btn-submit" style="display:none;">✅ Terminer l'examen</button>
+            </div>
+
+            <div class="question-nav">
+                <h4>Navigation rapide</h4>
+                <div id="question-dots" class="dots-container">
+                    <!-- Dots générés dynamiquement -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Page de résultats -->
+        <div id="results-page" class="page">
+            <div class="results-container">
+                <div id="result-icon" class="result-icon"></div>
+                <h2 id="result-title"></h2>
+                <div id="score-display" class="score-display"></div>
+                <div id="score-details" class="score-details"></div>
+                
+                <div class="results-actions">
+                    <button id="show-answers" class="btn-secondary">📖 Voir les corrections</button>
+                    <button id="retry-exam" class="btn-primary">🔄 Refaire l'examen</button>
+                </div>
+            </div>
+
+            <div id="answers-review" class="answers-review" style="display:none;">
+                <h3>📝 Révision des réponses</h3>
+                <div id="review-container"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="questions.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
