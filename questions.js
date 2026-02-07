@@ -1626,5 +1626,142 @@ const questionsDB = [
         correctAnswers: [0],
         type: "single",
         explanation: "L'adresse de destination de la couche 2 est l'adresse MAC de la passerelle (00-00-0c-94-36-ab). L'adresse source de la couche 2 est l'adresse MAC de l'hôte B (00-00-0c-94-36-bb). L'adresse de destination de la couche 3 est l'IP de l'hôte D (172.16.20.200). L'adresse source de la couche 3 est l'IP de l'hôte B (172.16.10.200)."
+    },
+    {
+        id: 38,
+        question: "Examinez l'illustration. Un administrateur tente de configurer le commutateur mais reçoit le message d'erreur affiché sur l'illustration. Quel est le problème ?",
+        image: "images/question51.png",
+        options: [
+            "L'administrateur doit d'abord passer en mode d'exécution privilégié avant d'exécuter la commande.",
+            "L'administrateur doit se connecter via le port de console pour accéder au mode de configuration globale.",
+            "L'administrateur est déjà en mode de configuration globale.",
+            "La commande complète, configure terminal, doit être utilisée."
+        ],
+        correctAnswers: [0],
+        type: "single",
+        explanation: "Pour passer en mode de configuration globale, la commande 'configure terminal' ou une version abrégée telle que 'config t' doit être saisie en mode d'exécution privilégié. Dans ce scénario, l'administrateur est en mode d'exécution utilisateur, comme l'indique le symbole > inscrit après le nom d'hôte. L'administrateur doit utiliser la commande 'enable' pour passer en mode d'exécution privilégié avant de saisir la commande 'configure terminal'."
+    },
+    {
+        id: 39,
+        question: "Examinez l'illustration. D'après le résultat de la commande, quelles affirmations sur la connectivité réseau sont correctes ? (Choisissez deux propositions.)",
+        image: "images/question58.png",
+        options: [
+            "Il existe 4 sauts entre ce périphérique et le périphérique situé à l'adresse 192.168.100.1.",
+            "La durée moyenne de transmission entre les deux hôtes est de 2 millisecondes.",
+            "La connectivité entre ces deux hôtes permet les vidéoconférences.",
+            "Une connectivité est établie entre ce périphérique et le périphérique situé à l'adresse 192.168.100.1.",
+            "Aucune passerelle par défaut n'est configurée sur cet hôte."
+        ],
+        correctAnswers: [0, 3],
+        type: "multiple",
+        explanation: "Il existe 4 sauts entre ce périphérique et le périphérique situé à l'adresse 192.168.100.1. Une connectivité est établie entre ce périphérique et le périphérique situé à l'adresse 192.168.100.1."
+    },
+    {
+        id: 40,
+        question: "Examinez l'illustration. Quelles deux adresses réseau peuvent être attribuées au réseau accueillant 10 hôtes ? Dans votre réponse, vous devez gaspiller le moins d'adresses possible, ne pas réutiliser des adresses déjà attribuées et rester dans la plage d'adresses 10.18.10.0/24. (Choisissez deux propositions.)",
+        image: "images/question64.png",
+        options: [
+            "10.18.10.224/28",
+            "10.18.10.224/27",
+            "10.18.10.208/28",
+            "10.18.10.200/28",
+            "10.18.10.240/27",
+            "10.18.10.200/27"
+        ],
+        correctAnswers: [0, 2],
+        type: "multiple",
+        explanation: "Pour 10 hôtes, un masque /28 (14 adresses utilisables) est suffisant. Les plages disponibles sont 10.18.10.224/28 et 10.18.10.208/28."
+    },
+    {
+        id: 41,
+        question: "Quel connecteur est utilisé avec le câblage à paires torsadées dans un réseau local Ethernet?",
+        image: "images/question67.png",
+        options: [
+            "Connecteur LC",
+            "Connecteur BNC",
+            "Connecteur SC",
+            "Connecteur RJ-45",
+            "Connecteur RJ-11"
+        ],
+        correctAnswers: [3],
+        type: "single",
+        explanation: "Le connecteur RJ-45 est utilisé pour le câblage Ethernet à paires torsadées."
+    },
+    {
+        id: 42,
+        question: "Examinez l'illustration. Les commutateurs présentent leur configuration par défaut. L'hôte A doit communiquer avec l'hôte D, mais l'hôte A ne peut avoir l'adresse MAC pour sa passerelle par défaut. Quels hôtes de réseau recevront la requête ARP envoyée par l'hôte A ?",
+        image: "images/question71.png",
+        options: [
+            "Uniquement les hôtes A, B et C",
+            "Uniquement les hôtes B et C",
+            "Uniquement les hôtes B, C et le routeur R1",
+            "Le routeur R1 uniquement",
+            "L'hôte D uniquement",
+            "Uniquement les hôtes A, B, C et D"
+        ],
+        correctAnswers: [2],
+        type: "single",
+        explanation: "Étant donné que l'hôte A n'a pas l'adresse MAC de la passerelle par défaut dans sa table ARP, l'hôte A envoie une diffusion ARP. La diffusion ARP serait envoyée à chaque périphérique du réseau local. Les hôtes B, C et le routeur R1 recevraient la diffusion. Le routeur R1 ne transmettrait pas le message."
+    },
+    {
+        id: 43,
+        question: "Faites correspondre le champ d'en-tête avec la couche appropriée du modèle OSI.",
+        image: "images/question80.png",
+        options: [
+            "Couche 2: En-tête 802.2",
+            "Couche 2: Séquence de contrôle de trame (FCS)",
+            "Couche 2: Adresse MAC de destination",
+            "Couche 3: TTL",
+            "Couche 3: Adresse IP source",
+            "Couche 4: Numéro d'accusé de réception",
+            "Couche 4: Numéro du port de destination"
+        ],
+        correctAnswers: [0, 1, 2, 3, 4, 5, 6],
+        type: "multiple",
+        explanation: "L'en-tête 802.2, le FCS et l'adresse MAC de destination sont de couche 2. Le TTL et l'adresse IP source sont de couche 3. Les numéros d'accusé de réception et de port de destination sont de couche 4."
+    },
+    {
+        id: 44,
+        question: "Associez les affirmations suivantes aux modèles de réseau correspondants.",
+        image: "images/question82.png",
+        options: [
+            "Réseau peer-to-peer: Nécessite une interface utilisateur spécifique",
+            "Réseau peer-to-peer: Aucun serveur dédié n'est requis",
+            "Application peer-to-peer: Un service en tâche de fond est requis",
+            "Application peer-to-peer: Les rôles de client et de serveur sont définis en fonction de chaque requête",
+            "Les deux: Les périphériques ne peuvent avoir qu'un rôle à la fois"
+        ],
+        correctAnswers: [1, 2, 3],
+        type: "multiple",
+        explanation: "Un réseau peer-to-peer n'a pas besoin de serveur dédié. Une application peer-to-peer nécessite un service en tâche de fond. Les rôles client/serveur sont définis par requête dans les applications peer-to-peer."
+    },
+    {
+        id: 45,
+        question: "Examinez l'illustration. Si Hôte1 doit transférer un fichier au serveur, quelles couches du modèle TCP/IP faut-il utiliser ?",
+        image: "images/question83.png",
+        options: [
+            "Uniquement les couches application, Internet et accès réseau",
+            "Uniquement les couches application, transport, réseau, liaison de données et physiques",
+            "Uniquement les couches d'accès réseau",
+            "Couches application, transport, Internet et accès réseau.",
+            "Uniquement les couches application et Internet",
+            "Couches application, session, transport, réseau, liaison de données et physiques"
+        ],
+        correctAnswers: [3],
+        type: "single",
+        explanation: "Le modèle TCP/IP contient les couches application, transport, Internet et accès réseau. Un transfert de fichier utilise le protocole de couche application FTP. Les données se déplaceraient de la couche d'application à travers toutes les couches du modèle et à travers le réseau vers le serveur de fichiers."
+    },
+    {
+        id: 46,
+        question: "Associez les descriptions aux composants d'adressage IPv6 correspondants.",
+        image: "images/question86.png",
+        options: [
+            "Cette partie de l'adresse est l'équivalent de la partie hôte d'une adresse IPv4: ID d'interface",
+            "Cette partie réseau de l'adresse est attribuée par le fournisseur d'accès Internet: préfixe de routage global",
+            "Cette partie de l'adresse est utilisée par une entreprise pour identifier les sous-réseaux: ID de sous-réseau"
+        ],
+        correctAnswers: [0, 1, 2],
+        type: "multiple",
+        explanation: "L'ID d'interface est l'équivalent de la partie hôte d'une IPv4. Le préfixe de routage global est attribué par le FAI. L'ID de sous-réseau est utilisé par l'entreprise pour identifier les sous-réseaux."
     }
 ];
