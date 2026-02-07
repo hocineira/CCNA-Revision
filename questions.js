@@ -1763,5 +1763,167 @@ const questionsDB = [
         correctAnswers: [0, 1, 2],
         type: "multiple",
         explanation: "L'ID d'interface est l'équivalent de la partie hôte d'une IPv4. Le préfixe de routage global est attribué par le FAI. L'ID de sous-réseau est utilisé par l'entreprise pour identifier les sous-réseaux."
+    },
+    {
+        id: 47,
+        question: "Associez les éléments ci-dessous aux types de topologie correspondants.",
+        image: "images/question97.png",
+        options: [
+            "Diagramme de topologie physique: Emplacement d'un ordinateur de bureau dans une salle de classe",
+            "Diagramme de topologie physique: Chemin de câbles reliant les salles aux armoires de câblage",
+            "Diagramme de la topologie logique: Adresse IP d'un serveur",
+            "Diagramme de la topologie logique: Port USB d'un ordinateur dans une salle de classe"
+        ],
+        correctAnswers: [0, 1, 2],
+        type: "multiple",
+        explanation: "La topologie physique montre l'emplacement physique des équipements et le câblage. La topologie logique montre les adresses IP et les connexions logiques."
+    },
+    {
+        id: 48,
+        question: "Reportez-vous à l'illustration. L'administrateur réseau a attribué au réseau local de LBMISS une plage d'adresses a été sous-réseau à l'aide d'un préfixe /29. Afin d'accueillir un nouveau bâtiment, le technicien a décidé d'utiliser le cinquième sous-réseau pour configurer le nouveau réseau (le sous-réseau zéro est le premier sous-réseau). Par les stratégies d'entreprise, l'interface du routeur reçoit toujours la première adresse d'hôte utilisable et le serveur de groupe de travail reçoit la dernière adresse d'hôte utilisable. Quelle configuration doit être entrée dans les propriétés du serveur de groupe de travail pour permettre la connectivité à Internet?",
+        image: "images/question101.png",
+        options: [
+            "Adresse IP: 192.168.10.38 masque de sous-réseau: 255.255.255.248, passerelle par défaut: 192.168.10.33",
+            "Adresse IP: 192.168.10.65 masque de sous-réseau: 255.255.255.240, passerelle par défaut: 192.168.10.76",
+            "Adresse IP: 192.168.10.38 masque de sous-réseau: 255.255.255.240, passerelle par défaut: 192.168.10.33",
+            "Adresse IP: 192.168.10.3, masque de sous-réseau: 255.255.255.0, passerelle par défaut: 192.168.1.1",
+            "Adresse IP: 192.168.10.41 masque de sous-réseau: 255.255.255.248, passerelle par défaut: 192.168.10.46"
+        ],
+        correctAnswers: [0],
+        type: "single",
+        explanation: "L'utilisation d'un préfixe /29 pour le sous-réseau 192.168.10.0 entraîne des sous-réseaux qui s'incrémentent de 8 : 192.168.10.0 (1), 192.168.10.8 (2), 192.168.10.16 (3), 192.168.10.24 (4), 192.168.10.32 (5). Le cinquième sous-réseau est 192.168.10.32/29 avec une plage d'hôtes de 192.168.10.33-38."
+    },
+    {
+        id: 49,
+        question: "Examinez l'illustration. Si l'hôte A envoie un paquet IP à l'hôte B. Quelle est l'adresse de destination de la trame lorsqu'il quitte l'hôte A ?",
+        image: "images/question104.png",
+        options: [
+            "DD:DD:DD:DD:DD:DD",
+            "AA:AA:AA:AA:AA:AA",
+            "CC:CC:CC:CC:CC:CC",
+            "BB:BB:BB:BB:BB:BB",
+            "172.168.10.65",
+            "172.168.10.99"
+        ],
+        correctAnswers: [3],
+        type: "single",
+        explanation: "Lorsqu'un hôte envoie des informations à un réseau distant, l'en-tête de trame de couche 2 contiendra une adresse MAC source et de destination. L'adresse source sera le périphérique hôte d'origine. L'adresse de destination sera l'interface Ethernet du routeur qui se connecte au même réseau. Dans le cas de l'hôte A envoyant des informations à l'hôte B, l'adresse source est AA:AA:AA:AA:AA:AA et l'adresse de destination est l'adresse MAC attribuée à l'interface Ethernet R2, BB:BB:BB:BB : BB:BB."
+    },
+    {
+        id: 50,
+        question: "Reportez-vous à l'illustration. Un ingénieur réseau a reçu l'adresse réseau 192.168.99.0 et un masque de sous-réseau 255.255.255.192 pour le sous-réseau sur les quatre réseaux indiqués. Combien d'adresses hôtes au total sont inutilisées sur les quatre sous-réseaux?",
+        image: "images/question112.png",
+        options: [
+            "72",
+            "88",
+            "158",
+            "200",
+            "224"
+        ],
+        correctAnswers: [3],
+        type: "single",
+        explanation: "Un masque /26 fournit 62 adresses hôtes utilisables par sous-réseau. Network A utilise 30, Network B 2, Network C 2, Network D 14. Total utilisé = 48. Total disponible = 4 × 62 = 248. Inutilisées = 248 - 48 = 200."
+    },
+    {
+        id: 51,
+        question: "Associez les descriptions aux mécanismes TCP correspondants.",
+        image: "images/question113.png",
+        options: [
+            "Nombre d'octets qu'un périphérique de destination peut accepter et traiter en une seule fois: taille de fenêtre",
+            "Reçu par un expéditeur avant de transmettre plus de segments dans une session: retransmission",
+            "Méthode de gestion des segments de données perdues: numéros d'ordre",
+            "Utilisé pour identifier les segments de données manquants: acknowledgment"
+        ],
+        correctAnswers: [0, 2],
+        type: "multiple",
+        explanation: "La taille de fenêtre détermine le nombre d'octets acceptés. La retransmission est utilisée pour les segments manquants. Les numéros d'ordre gèrent les segments perdus. L'acknowledgment identifie les segments manquants."
+    },
+    {
+        id: 52,
+        question: "Associez les protocoles d'application aux protocoles de transport corrects.",
+        image: "images/question116.png",
+        options: [
+            "TCP: FTP",
+            "TCP: HTTP",
+            "TCP: SMTP",
+            "UDP: DHCP",
+            "UDP: TFTP"
+        ],
+        correctAnswers: [0, 1, 2, 3, 4],
+        type: "multiple",
+        explanation: "FTP, HTTP et SMTP utilisent TCP. DHCP et TFTP utilisent UDP."
+    },
+    {
+        id: 53,
+        question: "Faire correspondre la fonction du pare-feu au type de protection contre les menaces qu'il fournit au réseau.",
+        image: "images/question117.png",
+        options: [
+            "Filtrage des paquets: empêche l'accès selon l'adresseIP ou MAC",
+            "Filtrage des URL: empêche l'accès aux sites Web",
+            "Filtrage dynamique de paquets (SPI): empêche les sessions entrantes non sollicitées",
+            "Filtrage des applications: empêche l'accès par numéro deport"
+        ],
+        correctAnswers: [0, 1, 2, 3],
+        type: "multiple",
+        explanation: "Le filtrage des paquets bloque selon l'adresse. Le filtrage des URL bloque les sites Web. Le SPI bloque les sessions non sollicitées. Le filtrage des applications bloque par numéro de port."
+    },
+    {
+        id: 54,
+        question: "Examinez l'illustration. Quels trois éléments factuels peut-on déduire du résultat de la commande show ip interface brief ? (Choisissez trois propositions.)",
+        image: "images/question119.png",
+        options: [
+            "Le commutateur peut être géré à distance.",
+            "Un terminal est connecté à une interface physique.",
+            "Deux terminaux sont connectés au commutateur.",
+            "Les mots de passe ont été configurés sur le commutateur.",
+            "Deux interfaces physiques ont été configurées.",
+            "L'interface SVI par défaut a été configurée."
+        ],
+        correctAnswers: [0, 1, 5],
+        type: "multiple",
+        explanation: "Vlan1 est le SVI par défaut. Étant donné qu'un SVI a été configuré, le commutateur peut être configuré et géré à distance. FastEthernet0/0 s'affiche et s'affiche, donc un périphérique est connecté."
+    },
+    {
+        id: 55,
+        question: "Reportez-vous à l'illustration. Quel protocole était responsable de la construction de la table qui est illustrée?",
+        image: "images/question125.png",
+        options: [
+            "DHCP",
+            "ICMP",
+            "DNS",
+            "ARP"
+        ],
+        correctAnswers: [3],
+        type: "single",
+        explanation: "ARP (Address Resolution Protocol) est responsable de la construction de la table qui associe les adresses IP aux adresses MAC physiques."
+    },
+    {
+        id: 56,
+        question: "Examinez l'illustration. Le PC1 envoie une requête ARP car il doit envoyer un paquet au PC2. Dans ce scénario, que se passe-t-il ensuite ?",
+        image: "images/question126.png",
+        options: [
+            "Le PC2 envoie une réponse ARP contenant son adresse MAC.",
+            "Le SW1 envoie une réponse ARP contenant son adresse MAC Fa0/1.",
+            "Le RT1 envoie une réponse ARP contenant son adresse Fa0/0.",
+            "Le RT1 envoie une réponse ARP contenant son adresse MAC PC2.",
+            "Le SW1 envoie une réponse ARP contenant son adresse MAC PC2."
+        ],
+        correctAnswers: [0],
+        type: "single",
+        explanation: "Lorsqu'un périphérique réseau souhaite communiquer avec un autre périphérique sur le même réseau, il envoie une requête ARP de diffusion. Dans ce cas, la requête contiendra l'adresse IP du PC2. Le périphérique de destination (PC2) envoie une réponse ARP avec son adresse MAC."
+    },
+    {
+        id: 57,
+        question: "Faites correspondre chaque type de champ de trame à sa fonction.",
+        image: "images/question127.png",
+        options: [
+            "Détection des erreurs: Ce champ vérifie si la trame a été endommagée pendant la transmission",
+            "Type: Ce champ permet d'identifier le protocole de couche 3 grâce à la procédure LLC",
+            "Adressage: Ce champ permet de diriger la trame vers sa destination",
+            "Début de trame: Ce champ indique le début d'une trame"
+        ],
+        correctAnswers: [0, 1, 2, 3],
+        type: "multiple",
+        explanation: "Le champ de détection des erreurs vérifie l'intégrité de la trame. Le champ type identifie le protocole de couche 3. Le champ adressage dirige la trame. Le champ début de trame indique le commencement."
     }
 ];
