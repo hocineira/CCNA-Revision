@@ -225,6 +225,19 @@ body {
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+.question-image {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.question-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
 .question-type {
     display: inline-block;
     background: #00bceb;

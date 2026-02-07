@@ -1442,5 +1442,20 @@ const questionsDB = [
         correctAnswers: [1],
         type: "single",
         explanation: "Zigbee est conçu pour les applications IoT à faible consommation."
+    },
+    {
+        id: 25,
+        question: "Examinez l'illustration. Une société utilise le bloc d'adresses de 128.107.0.0/16 pour son réseau. Quel masque de sous-réseau peut fournir un maximum de sous-réseaux de taille égale tout en fournissant suffisamment d'adresses d'hôte pour chaque sous-réseau dans l'illustration ?",
+        image: "images/question25.png",
+        options: [
+            "255.255.255.240",
+            "255.255.255.224",
+            "255.255.255.0",
+            "255.255.255.192",
+            "255.255.255.128"
+        ],
+        correctAnswers: [4],
+        type: "single",
+        explanation: "Le sous-réseau avec 100 hôtes nécessite au minimum 7 bits d'hôte (2^7 - 2 = 126 adresses utilisables). Le masque 255.255.255.128 (/25) fournit 126 adresses hôtes utilisables, ce qui est suffisant pour tous les sous-réseaux."
     }
 ];

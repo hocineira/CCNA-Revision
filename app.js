@@ -102,6 +102,7 @@ function displayQuestion() {
         <div class="question-text">
             <strong>Question ${currentQuestionIndex + 1}:</strong> ${question.question}
         </div>
+        ${question.image ? `<div class="question-image"><img src="${question.image}" alt="Illustration de la question"></div>` : ''}
         <div class="options-container">
     `;
     
