@@ -1457,5 +1457,174 @@ const questionsDB = [
         correctAnswers: [4],
         type: "single",
         explanation: "Le sous-réseau avec 100 hôtes nécessite au minimum 7 bits d'hôte (2^7 - 2 = 126 adresses utilisables). Le masque 255.255.255.128 (/25) fournit 126 adresses hôtes utilisables, ce qui est suffisant pour tous les sous-réseaux."
+    },
+    {
+        id: 26,
+        question: "Reliez chaque description au terme correspondant.",
+        image: "images/question3.png",
+        options: [
+            "Dimensionnement des messages: Processus consistant à décomposer un message long en parties distinctes avant de les envoyer sur le réseau",
+            "Encapsulation des messages: Processus consistant à placer un format de message à l'intérieur d'un autre",
+            "Codage des messages: Processus permettant de convertir des informations dans un format acceptable pour la transmission"
+        ],
+        correctAnswers: [0, 1, 2],
+        type: "multiple",
+        explanation: "Le dimensionnement décompose les messages, l'encapsulation place un format dans un autre, et le codage convertit les informations pour la transmission."
+    },
+    {
+        id: 27,
+        question: "Un administrateur réseau ajoute un nouveau réseau local à une filiale. Le nouveau réseau local doit prendre en charge 4 périphériques connectés. Quel est le plus petit masque réseau que l'administrateur réseau peut utiliser pour le nouveau réseau?",
+        image: "images/question4.png",
+        options: [
+            "255.255.255.224",
+            "255.255.255.248",
+            "255.255.255.128",
+            "255.255.255.192"
+        ],
+        correctAnswers: [1],
+        type: "single",
+        explanation: "Un masque /29 (255.255.255.248) offre 6 adresses hôtes utilisables, suffisant pour 4 périphériques."
+    },
+    {
+        id: 28,
+        question: "Reportez-vous à l'illustration. Quelle interface dont l'adresse IP de périphérique doit être utilisée comme paramètre de passerelle par défaut de l'hôte H1?",
+        image: "images/question16.png",
+        options: [
+            "R2: S0/0/1",
+            "R1: S0/0/0",
+            "R1: G0/0",
+            "R2: S0/0/0"
+        ],
+        correctAnswers: [2],
+        type: "single",
+        explanation: "La passerelle par défaut de H1 doit être l'interface du routeur R1 connectée au même réseau local, soit G0/0."
+    },
+    {
+        id: 29,
+        question: "Examinez l'illustration. Quel est le problème avec le raccordement affiché ?",
+        image: "images/question23.png",
+        options: [
+            "La longueur détorsadée de chaque fil est trop longue.",
+            "Les câbles sont trop épais pour le connecteur utilisé.",
+            "Le mauvais type de connecteur est utilisé.",
+            "Le treillis de cuivre n'aurait pas dû être retiré."
+        ],
+        correctAnswers: [0],
+        type: "single",
+        explanation: "Lors de la terminaison d'un câble RJ-45, les fils non torsadés ne doivent pas être trop longs et la gaine en plastique doit être sertie vers le bas pour maintenir les fils en place."
+    },
+    {
+        id: 30,
+        question: "Examinez l'illustration. Associez les réseaux aux adresses IP et aux préfixes capables de répondre aux exigences d'adressage d'hôte utilisable pour chaque réseau.",
+        image: "images/question27.png",
+        options: [
+            "Réseau A (100 hôtes): 192.168.0.128 /25",
+            "Réseau B (30 hôtes): 192.168.0.0 /26",
+            "Réseau C (25 hôtes): 192.168.0.96 /27",
+            "Réseau D (2 hôtes): 192.168.0.80 /30"
+        ],
+        correctAnswers: [0, 1, 2, 3],
+        type: "multiple",
+        explanation: "Le réseau A doit utiliser 192.168.0.128 /25 (126 adresses). Le réseau B doit utiliser 192.168.0.0 /26 (62 adresses). Le réseau C doit utiliser 192.168.0.96 /27 (30 adresses). Le réseau D doit utiliser 192.168.0.80 /30 (2 adresses)."
+    },
+    {
+        id: 31,
+        question: "Associez les caractéristiques aux méthodes de transmission correspondantes.",
+        image: "images/question33.png",
+        options: [
+            "Cut-through: A une faible latence",
+            "Cut-through: Peut transférer des trames incomplètes",
+            "Cut-through: Démarre la transmission lorsque l'adresse de destination est reçue",
+            "Store-and-forward: Stocke toujours la trame entière",
+            "Store-and-forward: Vérifie le CRC avant d'effectuer la transmission",
+            "Store-and-forward: Vérifie la longueur de la trame avant d'effectuer la transmission"
+        ],
+        correctAnswers: [0, 1, 2, 3, 4, 5],
+        type: "multiple",
+        explanation: "Un commutateur store-and-forward stocke toujours la trame entière avant la transmission, et vérifie son CRC et la longueur de la trame. Un commutateur cut-through peut transmettre des trames avant de recevoir le champ d'adresse de destination, présentant ainsi moins de latence."
+    },
+    {
+        id: 32,
+        question: "Associez les fonctionnalités aux catégories.",
+        image: "images/question35.png",
+        options: [
+            "Adresse IP: contenu dans l'en-tête de couche 3",
+            "Adresse IP: séparés en une partie réseau et un identifiant unique",
+            "Adresse IP: 32 ou 128 bits",
+            "Adresse MAC: contenu dans l'en-tête de couche 2",
+            "Adresse MAC: séparés en OUI et un identifiant unique",
+            "Adresse MAC: 48 bits"
+        ],
+        correctAnswers: [0, 1, 2, 3, 4, 5],
+        type: "multiple",
+        explanation: "Les adresses IP sont dans l'en-tête de couche 3 (32 ou 128 bits), séparées en partie réseau et identifiant. Les adresses MAC sont dans l'en-tête de couche 2 (48 bits), séparées en OUI et identifiant unique."
+    },
+    {
+        id: 33,
+        question: "Reportez-vous à l'illustration. Si PC1 envoie un paquet à PC2 et que le routage a été configuré entre les deux routeurs, que fait R1 de l'en-tête de trame Ethernet intégré par PC1?",
+        image: "images/question39.png",
+        options: [
+            "Rien, puisque le routeur est associé à une route vers le réseau de destination",
+            "Ouvrir l'en-tête et l'utiliser pour déterminer si les données sont à envoyer ou non à S0/0/0",
+            "Supprimer l'en-tête Ethernet et configurer un nouvel en-tête de couche 2 avant de l'envoyer à S0/0/0",
+            "Ouvrir l'en-tête et remplacer l'adresse MAC de destination par une nouvelle adresse"
+        ],
+        correctAnswers: [2],
+        type: "single",
+        explanation: "Lorsque PC1 forme les différents en-têtes attachés aux données, l'un de ces en-têtes est l'en-tête de couche 2. Étant donné que PC1 se connecte à un réseau Ethernet, un en-tête Ethernet est utilisé. L'adresse MAC source sera l'adresse MAC de PC1 et l'adresse MAC de destination sera celle de G0/0 sur R1. Lorsque R1 obtient ces informations, le routeur supprime l'en-tête de couche 2 et en crée un nouveau pour le type de réseau sur lequel les données seront placées (la liaison série)."
+    },
+    {
+        id: 34,
+        question: "Associez les descriptions aux adresses IP correspondantes.",
+        image: "images/question42.png",
+        options: [
+            "Adresse de bouclage: 127.0.0.1",
+            "Adresse expérimentale: 240.2.6.255",
+            "À une adresse publique: 198.133.219.2",
+            "Adresse link-local: 169.254.1.5"
+        ],
+        correctAnswers: [0, 1, 2, 3],
+        type: "multiple",
+        explanation: "127.0.0.1 est l'adresse de bouclage. 240.2.6.255 est une adresse expérimentale. 198.133.219.2 est une adresse publique. 169.254.1.5 est une adresse link-local."
+    },
+    {
+        id: 35,
+        question: "Quel scénario décrit une fonction fournie par la couche transport ?",
+        options: [
+            "Un employé d'une entreprise accède à un serveur Web situé sur un réseau d'entreprise. La couche transport formate l'écran afin que la page Web s'affiche correctement quel que soit le périphérique utilisé pour accéder au site Web.",
+            "Un étudiant regarde un petit film sur le Web avec le son activé. Le film et le son sont codés dans l'en-tête de la couche transport.",
+            "Un étudiant a deux fenêtres de navigateur Web ouvertes pour accéder à deux sites Web. La couche transport s'assure que la page Web appropriée est envoyée vers la fenêtre de navigateur appropriée.",
+            "Un étudiant utilise un téléphone VoIP d'une salle de classe pour appeler chez lui. L'identifiant unique stocké dans le téléphone est une adresse de couche transport utilisée pour contacter un autre périphérique réseau sur le même réseau."
+        ],
+        correctAnswers: [2],
+        type: "single",
+        explanation: "Les numéros de port source et de destination sont utilisés pour identifier l'application et la fenêtre correctes au sein de cette application."
+    },
+    {
+        id: 36,
+        question: "Quelle est la conséquence de la configuration d'un routeur avec la commande de configuration globale ipv6 unicast-routing ?",
+        options: [
+            "Les interfaces de routeur activées IPv6 commencent à envoyer des messages d'annonces de routeur ICMPv6.",
+            "Il crée statiquement une adresse monodiffusion globale sur ce routeur.",
+            "Toutes les interfaces du routeur seront automatiquement activées.",
+            "Chaque interface de routeur génère une adresse link-local IPv6."
+        ],
+        correctAnswers: [0],
+        type: "single",
+        explanation: "La commande ipv6 unicast-routing active le routage IPv6 sur le routeur et fait envoyer des messages RA (Router Advertisement) par les interfaces IPv6."
+    },
+    {
+        id: 37,
+        question: "Reportez-vous à l'illustration. L'hôte B sur le sous-réseau Enseignants transmet un paquet à l'hôte D sur le sous-réseau Students. Quelles adresses de couche 2 et de couche 3 sont contenues dans les PDU qui sont transmises de l'hôte B au routeur?",
+        image: "images/question48.png",
+        options: [
+            "Adresse de destination de la couche 2 = 00-00-0c-94-36-ab, Adresse source de la couche 2 = 00-00-0c-94-36-bb, Adresse de destination de la couche 3 = 172.16.20.200, Adresse source de la couche 3 = 172.16.10.200",
+            "Adresse de destination de la couche 2 = 00-00-0c-94-36-cd, Adresse source de la couche 2 = 00-00-0c-94-36-bb, Adresse de destination de la couche 3 = 172.16.20.99, Adresse source de la couche 3 = 172.16.10.200",
+            "Adresse de destination de la couche 2 = 00-00-0c-94-36-cd, Adresse source de la couche 2 = 00-00-0c-94-36-bb, Adresse de destination de la couche 3 = 172.16.20.200, Adresse source de la couche 3 = 172.16.10.200",
+            "Adresse de destination de la couche 2 = 00-00-0c-94-36-ab, Adresse source de la couche 2 = 00-00-0c-94-36-bb, Adresse de destination de la couche 3 = 172.16.20.99, Adresse source de la couche 3 = 172.16.10.200"
+        ],
+        correctAnswers: [0],
+        type: "single",
+        explanation: "L'adresse de destination de la couche 2 est l'adresse MAC de la passerelle (00-00-0c-94-36-ab). L'adresse source de la couche 2 est l'adresse MAC de l'hôte B (00-00-0c-94-36-bb). L'adresse de destination de la couche 3 est l'IP de l'hôte D (172.16.20.200). L'adresse source de la couche 3 est l'IP de l'hôte B (172.16.10.200)."
     }
 ];
