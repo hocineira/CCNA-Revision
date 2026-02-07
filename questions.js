@@ -1925,5 +1925,77 @@ const questionsDB = [
         correctAnswers: [0, 1, 2, 3],
         type: "multiple",
         explanation: "Le champ de détection des erreurs vérifie l'intégrité de la trame. Le champ type identifie le protocole de couche 3. Le champ adressage dirige la trame. Le champ début de trame indique le commencement."
+    },
+    {
+        id: 58,
+        question: "Faites correspondre chaque élément au type de diagramme de topologie sur lequel il est généralement identifié. (Toutes les options ne sont pas utilisées.)",
+        image: "images/question24.png",
+        options: [
+            "Diagramme de topologie physique: emplacement d'un ordinateur de bureau dans une salle de classe",
+            "Diagramme de topologie physique: chemin de câbles reliant les salles aux armoires de câblage",
+            "Diagramme de la topologie logique: adresse IP d'un serveur",
+            "Port USB d'un ordinateur dans une salle de classe"
+        ],
+        correctAnswers: [0, 1, 2],
+        type: "multiple",
+        explanation: "La topologie physique montre l'emplacement des équipements et le câblage physique. La topologie logique montre les adresses IP et les connexions logiques."
+    },
+    {
+        id: 59,
+        question: "Associez le type de menace à la cause. (Toutes les options ne sont pas utilisées.)",
+        image: "images/question58.png",
+        options: [
+            "Maintenance threats: mauvaise manipulation de composants électriques clés (décharge électrostatique), manque de pièces de rechange critiques, mauvais câblage et mauvais étiquetage",
+            "Environmental threats: températures extrêmes (trop chaudes ou trop froides) ou humidité extrême (trop humide ou trop sèche)",
+            "Hardware threats: dommages physiques aux serveurs, routeurs, commutateurs, installations de câblage et postes de travail",
+            "Electrical threats: pics de tension, alimentation insuffisante (baisses de tension), alimentation non conditionnée (bruit) et perte totale d'alimentation"
+        ],
+        correctAnswers: [0, 1, 2, 3],
+        type: "multiple",
+        explanation: "Les menaces de maintenance concernent la mauvaise manipulation. Les menaces environnementales concernent la température et l'humidité. Les menaces matérielles sont les dommages physiques. Les menaces électriques concernent l'alimentation."
+    },
+    {
+        id: 60,
+        question: "Référez-vous à l'exposition. Faites correspondre le réseau avec l'adresse IP et le préfixe corrects qui satisferont les exigences d'adressage hôte utilisables pour chaque réseau. (Toutes les options ne sont pas utilisées.)",
+        image: "images/question147.png",
+        options: [
+            "Network A (100 hôtes): 192.168.0.0 /25",
+            "Network B (50 hôtes): 192.168.0.128 /26",
+            "Network C (25 hôtes): 192.168.0.192 /27",
+            "Network D (2 hôtes): 192.168.0.224 /30"
+        ],
+        correctAnswers: [0, 1, 2, 3],
+        type: "multiple",
+        explanation: "Le réseau A doit utiliser 192.168.0.0 /25, ce qui donne 126 adresses d'hôtes. Le réseau B doit utiliser 192.168.0.128 /26, ce qui donne 62 adresses d'hôtes. Le réseau C doit utiliser 192.168.0.192 /27, ce qui donne 30 adresses d'hôte. Le réseau D doit utiliser 192.168.0.224 /30, ce qui donne 2 adresses d'hôte."
+    },
+    {
+        id: 61,
+        question: "Associez une instruction au modèle de réseau associé. (Toutes les options ne sont pas utilisées.)",
+        image: "images/question151.png",
+        options: [
+            "Réseau pair à pair: aucun serveur dédié n'est requis",
+            "Réseau pair à pair: les rôles client et serveur sont définis par requête",
+            "Application peer-to-peer: nécessite une interface utilisateur spécifique",
+            "Application peer-to-peer: un service d'arrière-plan est requis"
+        ],
+        correctAnswers: [0, 1, 3],
+        type: "multiple",
+        explanation: "Les réseaux peer-to-peer ne nécessitent pas l'utilisation d'un serveur dédié, et les appareils peuvent assumer simultanément les rôles de client et de serveur sur demande. Parce qu'ils ne nécessitent pas de comptes ou d'autorisations formalisés, ils sont mieux utilisés dans des situations limitées. Les applications peer-to-peer nécessitent une interface utilisateur et un service d'arrière-plan pour s'exécuter, et peuvent être utilisées dans des situations plus diverses."
+    },
+    {
+        id: 62,
+        question: "Référez-vous à l'exposition. Les commutateurs ont une configuration par défaut. L'hôte A doit communiquer avec l'hôte D, mais l'hôte A n'a pas l'adresse MAC de la passerelle par défaut. Quels périphériques réseau recevront la requête ARP envoyée par l'hôte A ?",
+        image: "images/question159.png",
+        options: [
+            "uniquement l'hôte D",
+            "uniquement les hôtes A, B, C et D",
+            "uniquement les hôtes B et C",
+            "uniquement les hôtes B, C et le routeur R1",
+            "uniquement les hôtes A, B et C",
+            "uniquement le routeur R1"
+        ],
+        correctAnswers: [3],
+        type: "single",
+        explanation: "Étant donné que l'hôte A n'a pas l'adresse MAC de la passerelle par défaut dans sa table ARP, l'hôte A envoie une diffusion ARP. La diffusion ARP serait envoyée à chaque périphérique du réseau local. Les hôtes B, C et le routeur R1 recevraient la diffusion. Le routeur R1 ne transmettrait pas le message."
     }
 ];
